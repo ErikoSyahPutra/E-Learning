@@ -16,7 +16,7 @@ const ServicesData = [
     id: 1,
     title: "Web development",
     link: "#",
-    icon: <Global />,
+    icon: <Global size={33} />,
     delay: 0.2,
   },
   {
