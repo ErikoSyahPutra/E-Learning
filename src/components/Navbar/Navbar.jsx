@@ -1,4 +1,6 @@
+import { HambergerMenu } from "iconsax-react";
 import React from "react";
+import { motion } from "framer-motion";
 
 const NavbarMenu = [
   {
@@ -30,8 +32,12 @@ const NavbarMenu = [
 
 const Navbar = () => {
   return (
-    <nav>
-      <div className="flex justify-between items-center container py-10">
+    <nav className="relative z-20">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex justify-between items-center container py-10"
+      >
         {/* Logo Section */}
         <div>
           <h1 className="text-2xl font-bold">The Coding Journey</h1>
@@ -54,8 +60,10 @@ const Navbar = () => {
           </ul>
         </div>
         {/* Mobile Hamburger Menu Section */}
-        
-      </div>
+        <div className="lg:hidden">
+          <HambergerMenu size={35} />
+        </div>
+      </motion.div>
     </nav>
   );
 };
